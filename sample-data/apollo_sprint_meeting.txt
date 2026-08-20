@@ -1,0 +1,17 @@
+APOLLO CUSTOMER PORTAL — SPRINT MEETING NOTES
+Meeting date: August 14, 2026
+Attendees: Maya, Ravi, Priya, Arjun
+
+Decisions
+- The team agreed that the API integration milestone needs additional time because of the external API dependency.
+- The API integration target was moved from August 20 to August 27, 2026.
+- Arjun remains responsible for the API integration.
+- The MVP release date of August 28 remains unchanged for now.
+
+Action Items
+- Arjun: complete API integration by August 27.
+- Maya: review the impact of the API delay on the MVP release.
+- Priya: continue dashboard development against the existing August 21 target.
+
+Risks
+- The one-day gap between API completion and the MVP release is now a schedule risk.

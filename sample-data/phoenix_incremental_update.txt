@@ -1,0 +1,7 @@
+PROJECT UPDATE
+
+1. Payment Integration
+Owner: David
+Due: October 2, 2026
+
+The payment integration delivery date has been revised based on the latest dependency status.

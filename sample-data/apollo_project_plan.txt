@@ -1,0 +1,19 @@
+APOLLO CUSTOMER PORTAL — PROJECT PLAN
+Version: 1.0
+Project Owner: Maya
+
+Project Goal
+Build a customer portal with secure authentication, a customer dashboard, and an API integration layer.
+
+Milestones
+1. Authentication — owner: Ravi — due August 14, 2026
+2. Dashboard — owner: Priya — due August 21, 2026
+3. API Integration — owner: Arjun — due August 20, 2026
+4. MVP Release — owner: Maya — due August 28, 2026
+
+Risks
+- API dependency may delay the integration milestone. Owner: Arjun.
+- Dashboard requirements may change during the sprint. Owner: Priya.
+
+Plan Status
+The project is expected to remain on schedule if the API dependency is resolved by August 18.

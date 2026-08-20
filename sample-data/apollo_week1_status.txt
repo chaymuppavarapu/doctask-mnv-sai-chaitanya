@@ -1,0 +1,22 @@
+APOLLO CUSTOMER PORTAL — WEEK 1 STATUS REPORT
+Reporting period: August 10–14, 2026
+Author: Maya
+
+Overall Status
+On Track
+
+Completed
+- Authentication was completed on August 14. Ravi completed the work.
+- Dashboard development is approximately 60% complete. Priya remains the owner.
+
+In Progress
+- API integration is in progress.
+- The external API dependency has caused a delay.
+
+Risks
+- API dependency remains the main project risk. Arjun owns the risk.
+
+Next Steps
+- Complete the API integration.
+- Continue dashboard development.
+- Confirm the revised API schedule in the next sprint meeting.

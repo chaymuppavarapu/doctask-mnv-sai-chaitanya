@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SuperDocs Growth Task 3 — Use Cases & Who Would Buy Them" />
+  <title>SuperDocs · Use Cases & Buyers</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-orb orb-a"></div>
+  <div class="bg-orb orb-b"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      <div>
+        <div class="brand-name">SuperDocs</div>
+        <div class="brand-sub">Growth research · Round 2</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <label class="upload-button">
+        <input id="csvInput" type="file" accept=".csv,text/csv" />
+        <span>Upload CSV</span>
+      </label>
+      <button id="resetBtn" class="ghost-button" type="button">Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">TASK 3 · USE CASES, AND WHO WOULD BUY THEM</div>
+        <h1>Where document workflows<br><span>become buying problems.</span></h1>
+        <p>Ten individually evidenced document workflows mapped to a specific company, recurring pain, buyer, listening channel, and credible first-conversation angle.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-label">DATASET</div>
+        <div id="heroCount" class="hero-count">10</div>
+        <div class="hero-meta">verified research rows</div>
+      </div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="workspace">
+      <aside class="filters">
+        <div class="filter-title">Research view</div>
+        <label class="search-wrap">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search use cases, companies, buyers…" />
+        </label>
+
+        <div class="filter-group">
+          <div class="filter-label">Buyer role</div>
+          <select id="buyerFilter">
+            <option value="">All buyer roles</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <div class="filter-label">Sort</div>
+          <select id="sortSelect">
+            <option value="default">Research order</option>
+            <option value="use_case">Use case A–Z</option>
+            <option value="companies">Companies A–Z</option>
+            <option value="buyer">Buyer role A–Z</option>
+          </select>
+        </div>
+
+        <div class="tip">
+          <div class="tip-icon">↗</div>
+          <div>
+            <strong>Submission lens</strong>
+            <p>Open a card to inspect the complete company → pain → buyer → conversation chain.</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="results">
+        <div class="results-head">
+          <div>
+            <div class="section-kicker">CURRENT INDEX</div>
+            <h2>Use cases</h2>
+          </div>
+          <div id="resultCount" class="result-count"></div>
+        </div>
+        <div id="cards" class="cards"></div>
+        <div id="empty" class="empty" hidden>
+          <div class="empty-icon">⌕</div>
+          <h3>No matching research</h3>
+          <p>Try a different search term or reset the filters.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div>SuperDocs · Growth Task 3 research interface</div>
+    <div>Source links open in a new tab · No outreach performed</div>
+  </footer>
+
+  <dialog id="detailDialog">
+    <div class="dialog-head">
+      <div>
+        <div id="dialogKicker" class="section-kicker"></div>
+        <h2 id="dialogTitle"></h2>
+      </div>
+      <button id="closeDialog" class="close-button" aria-label="Close">×</button>
+    </div>
+    <div id="dialogBody"></div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>

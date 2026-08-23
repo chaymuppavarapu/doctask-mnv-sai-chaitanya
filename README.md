@@ -160,18 +160,18 @@ Deterministic stages do not necessarily report token or cost values because they
 
 ## Watch Folder
 
-The local watcher is implemented in `backend/watch_folder.py` and scans a project directory under `watch/<project_id>/` for new files. It currently supports UTF-8 `.txt` documents only.
+The local watcher is implemented in `engineer-task/backend/watch_folder.py` and scans a project directory under `engineer-task/watch/<project_id>/` for new files. It currently supports UTF-8 `.txt` documents only.
 
 Example:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe watch_folder.py --root ..\watch
 ```
 
 ## MCP
 
-DocTask exposes a lightweight MCP server in `backend/mcp_server.py` and a runnable example client in `backend/mcp_client_example.py`. The server uses Streamable HTTP and exposes operations for:
+DocTask exposes a lightweight MCP server in `engineer-task/backend/mcp_server.py` and a runnable example client in `engineer-task/backend/mcp_client_example.py`. The server uses Streamable HTTP and exposes operations for:
 
 - listing documents
 - searching documents
@@ -186,14 +186,14 @@ DocTask exposes a lightweight MCP server in `backend/mcp_server.py` and a runnab
 Start the server:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe mcp_server.py
 ```
 
 Run the example client in a second terminal:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe mcp_client_example.py --project-id 1 --document-ids 1 2
 ```
 
@@ -250,32 +250,32 @@ backend/
 frontend/
   src/
   package.json
-sample-data/
+engineer-task/sample-data/
 watch/
 README.md
 ```
 
 Key implementation files:
 
-- `backend/app/main.py` orchestrates projects, documents, runs, reports, conflicts, Examine, and incremental updates.
-- `backend/app/semantic.py` handles chunking, embedding, indexing, and semantic retrieval.
-- `backend/app/facts.py` and `backend/app/incremental.py` handle canonicalization and incremental change logic.
-- `backend/app/agents/` contains the extraction, conflict, draft, and examine agents.
-- `backend/mcp_server.py` and `backend/mcp_client_example.py` provide the MCP surface.
+- `engineer-task/backend/app/main.py` orchestrates projects, documents, runs, reports, conflicts, Examine, and incremental updates.
+- `engineer-task/backend/app/semantic.py` handles chunking, embedding, indexing, and semantic retrieval.
+- `engineer-task/backend/app/facts.py` and `engineer-task/backend/app/incremental.py` handle canonicalization and incremental change logic.
+- `engineer-task/backend/app/agents/` contains the extraction, conflict, draft, and examine agents.
+- `engineer-task/backend/mcp_server.py` and `engineer-task/backend/mcp_client_example.py` provide the MCP surface.
 
 ## Setup
 
 The repository is designed for a local Windows PowerShell workflow.
 
 1. Clone the repository.
-2. Create a Python environment in `backend/` and install dependencies:
+2. Create a Python environment in `engineer-task/backend/` and install dependencies:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
-3. Create `backend/.env` and configure the local environment variables:
+3. Create `engineer-task/backend/.env` and configure the local environment variables:
 
 ```env
 DATABASE_URL=postgresql+psycopg://USER:PASSWORD@HOST:5432/DBNAME
@@ -289,14 +289,14 @@ LLM_OUTPUT_COST_PER_1M=0
 5. Start the FastAPI backend:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe -m uvicorn app.main:app --reload
 ```
 
 6. Install and start the frontend:
 
 ```powershell
-cd frontend
+cd engineer-task/frontend
 npm install
 npm run dev
 ```
@@ -306,7 +306,7 @@ npm run dev
 The verified backend test command is:
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
@@ -325,7 +325,7 @@ The current behavior suite contains 28 passing tests and covers:
 The frontend build command is:
 
 ```powershell
-cd frontend
+cd engineer-task/frontend
 npm run build
 ```
 
@@ -339,7 +339,7 @@ A realistic evaluator-friendly demo is:
 4. Review a detected conflict and compare the opposing facts and evidence.
 5. Accept the preferred value and observe the completed report.
 6. Run Examine to validate the output against a rule set.
-7. Add a follow-up document or drop one into `watch/<project_id>/`.
+7. Add a follow-up document or drop one into `engineer-task/watch/<project_id>/`.
 8. Run an incremental update and show that only affected facts change while unrelated fields remain intact.
 
 ## Verification Status
@@ -369,7 +369,7 @@ The current implementation is functional, but a few limitations remain:
 
 ## Security / Secrets
 
-- Keep `backend/.env` local to the development environment and do not commit it.
+- Keep `engineer-task/backend/.env` local to the development environment and do not commit it.
 - Never commit API keys or other secrets.
 - Uploaded document instructions are treated as data rather than workflow commands.
 - The repository’s local environment/build artifacts are expected to stay out of source control.
@@ -384,7 +384,7 @@ This README describes the current workspace state of the DocTask project. The re
 The behavior suite contains 28 deterministic `unittest` cases. It does not require a developer database or LLM API key to run. The test module supplies a non-routable PostgreSQL test URL before importing the application; database calls are mocked where required.
 
 ```powershell
-cd backend
+cd engineer-task/backend
 .venv\Scripts\Activate.ps1
 python -m unittest discover -s tests -v
 ```

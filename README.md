@@ -1,3 +1,5 @@
+https://superdocs-portfolio.vercel.app/(we will get a clear picture what i have build.by this the chaos will be less of finding the tasks. this single is everything about the task)
+
 # DocTask — Project Intelligence
 
 DocTask turns a project’s collection of documents into an evidence-grounded intelligence system. It retrieves relevant context, extracts structured facts, detects contradictions, pauses for human review when needed, and preserves the source evidence behind the final report.

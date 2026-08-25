@@ -1,4 +1,4 @@
-https://superdocs-portfolio.vercel.app/  (we will get a clear picture what i have build.by this the chaos will be less of finding the tasks. this single is everything about the task)
+https://superdocs-portfolio.vercel.app/  (you will get a clear picture what i have build.by this the chaos will be less of finding the tasks. this single is everything about the task)
 
 # DocTask — Project Intelligence
 
